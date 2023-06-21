@@ -13,11 +13,10 @@ function sideToggle() {
   nav.classList.toggle("active");
 
   /* active를 포함하고 있으면 localStorage에 저장  */
-  if (nav.className.includes("active")) {
-    localStorage.setItem("navState", "opened");
-  } else {
-    localStorage.setItem("navState", "closed");
-  }
+  localStorage.setItem(
+    "navState",
+    nav.className.includes("active") ? "opened" : "closed"
+  );
 }
 
 /* 새로고침시 preload 클래스 사용 0> 모든 자식 요소의 transition이 무효화된다.  */
